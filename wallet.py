@@ -260,8 +260,8 @@ def save_user_data(uid: str, address: str):
         data = fetchAllData(address)
         fs.collection("USERS").document(uid).collection("wallets").document(address).set(data)
         
-        stream_id = '0d6a8c2c-0562-4b8c-84cb-c774b15c4c51'
-        add_address_to_moralis_stream(address, stream_id)
+        # stream_id = '0d6a8c2c-0562-4b8c-84cb-c774b15c4c51'
+        # add_address_to_moralis_stream(address, stream_id)
         
         return {"status": "success"}
     except Exception as e:
