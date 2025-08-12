@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
+STREAM_ID = os.getenv('STREAM_ID')
 
 top_chains = ["eth", "bsc", "polygon", "avalanche","arbitrum"]
 unitMap = {
@@ -260,7 +261,7 @@ def save_user_data(uid: str, address: str):
         data = fetchAllData(address)
         fs.collection("USERS").document(uid).collection("wallets").document(address).set(data)
         
-        stream_id = '7c6fdab1-63b9-41c9-a301-5ea518b2d512'
+        stream_id = STREAM_ID
         add_address_to_moralis_stream(address, stream_id)
         
         return {"status": "success"}
