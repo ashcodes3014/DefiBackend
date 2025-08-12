@@ -2,3 +2,4 @@ fastapi
 moralis
 python-dotenv
 firebase-admin
+uvicorn
