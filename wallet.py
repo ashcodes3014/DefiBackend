@@ -271,7 +271,7 @@ def save_user_data(uid: str, address: str):
         if contains_error(data):
             raise ValueError("Moralis API returned an error. Likely plan limit reached.")
         fs.collection("USERS").document(uid).collection("wallets").document(address).set(data)
-        stream_id = streamID
+        stream_id = STREAM_ID
         add_address_to_moralis_stream(address, stream_id)
         
         return {"status": "success"}
